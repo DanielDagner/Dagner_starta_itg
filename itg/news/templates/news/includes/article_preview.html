@@ -1,0 +1,17 @@
+<div class="article-preview">
+    <h2>{{ article.title }}</h2>
+
+    <p><strong>Длина текста:</strong> {{article.text|length}} символов</p>
+
+    <p><strong>Краткое описание:</strong> {{ article.text|truncatechars:50 }}</p>
+
+    <p><strong>Теги:</strong> {{ article.tags|join:", " }}</p>
+
+    <ul>
+        {% for tag in article.tags %}
+            <li>#{{ tag }}</li>
+        {% endfor %}
+    </ul>
+
+<!--    <a href="{% url 'get_news_by_id' article_id=article.id %}">Читать дальше</a>-->
+</div>

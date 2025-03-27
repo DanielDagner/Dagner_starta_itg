@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Мой сайт{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'news/css/main.css' %}">
+</head>
+<body>
+    {% include 'includes/nav_menu.html' %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        {% block footer %}© 2025 Мой сайт{% endblock %}
+    </footer>
+    <script src="{% static 'news/js/main.js' %}"></script>
+</body>
+</html>

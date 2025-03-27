@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Каталог новостей{% endblock %}
+
+{% block content %}
+    <h1>Каталог новостей</h1>
+
+    {% for news in articles %}
+        {% include 'news/includes/article_preview.html' with news=news %}
+    {% empty %}
+        <p>Новостей пока нет.</p>
+    {% endfor %}
+
+{% endblock %}
